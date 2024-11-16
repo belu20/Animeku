@@ -1,11 +1,12 @@
 import Image from "next/image"
+import Link from "next/link"
 
-const animeList = ({title, images}) => {
+const AnimeList = ({title, images, id}) => {
     return(
-        <div className="bg-indigo-500">
-            <Image src={images} alt="...." width={600} height={400}/>
-            <h3>{title}</h3> 
-        </div>
+        <Link href={`/${id}`} className="cursor-pointer">
+            <Image src={images} alt="...." width={350} height={350}/>
+            <h3 className="font-bold md:text-xl text-md p-4">{title}</h3> 
+        </Link>
     )
 }
-export default animeList
+export default AnimeList
